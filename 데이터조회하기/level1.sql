@@ -14,3 +14,8 @@ order by department_id, employee_id;
 select  department_id, last_name, salary*12 연봉
 from employees
 order by 연봉 desc;
+
+-- employees 테이블에서 employee_id, first_name, last_name을 출력 employee_id 를 기준으로 내림차순 출력
+select employee_id, first_name,last_name 
+from employees
+order by employee_id desc;
