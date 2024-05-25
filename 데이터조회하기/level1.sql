@@ -19,3 +19,8 @@ order by 연봉 desc;
 select employee_id, first_name,last_name 
 from employees
 order by employee_id desc;
+
+-- employees 테이블에서 employee_id 에서 120에서 150번까지 직원을 부서번호가 큰순으로 정렬하고, 부서번호가 같을 시 월급이 큰 순으로 정렬 
+select employee_id, salary 월급 from employees 
+where employee_id between 120 and 150
+order by department_id desc, salary desc ;
