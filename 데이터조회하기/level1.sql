@@ -9,3 +9,8 @@ where manager_id is not null;
 select department_id, employee_id, first_name, last_name
 from employees
 order by department_id, employee_id;
+
+-- 연봉 출력하는 쿼리
+select  department_id, last_name, salary*12 연봉
+from employees
+order by 연봉 desc;
