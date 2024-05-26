@@ -130,3 +130,12 @@ select trunc(15.79,1) 소수첫째,
 trunc(15.251,0) 정수,
 trunc(15.251,-1) "10의자리"
 from dual;
+
+
+-- 짝수 (mod를 이용하여 나머지값이 0이면 짝수)
+select employee_id 짝수, last_name
+from employees
+where mod(employee_id, 2) =0 order by 1;
+
+--employees 테이블에서 salary를 30으로 나눈 후 나눈 값의 결과를 반올림하여  정수, 소수점 첫째 자리, 10의 자리로 나타내시오.
+select salary, round(salary /30, 0)정수, round(salary/30, 1) 소수첫째자리, round(salary/30, -1) "10의 자리" from employees;
