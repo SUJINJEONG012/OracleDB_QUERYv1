@@ -66,3 +66,16 @@ where hire_date between '94/01/01' and  '94/12/30';
 
 -- employees 테이블에서 salary 7000 미만이거나 17000 보다 많은 사원을 출력
 select * from employees where salary < 7000 or salary > 17000;
+
+
+-- in 연산자 
+select * from employees where salary > 14000;
+select * from employees where salary = 4000 or salary = 3000 or salary =2700;
+select * from employees where salary in (4000,3000,2700);
+
+select * from employees where salary in (10000, 17000, 24000);
+
+-- 3,11를 제외한
+select department_id from employees 
+where department_id not in(3,11)
+order by department_id desc;
