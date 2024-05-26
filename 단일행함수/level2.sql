@@ -117,3 +117,16 @@ add_months(hire_date, 3) "3개월추가하기",
 hire_date,
 add_months(hire_date, -3) "3개월 뺀값"
 from employees where department_id between 3 and 9;
+
+-- 반올림 하는 함수, 15.2, 15, 20 출력
+select 
+round(15.251, 0) 소수첫째,
+round(15.251, 0) 정수,
+round(15.251, -1) "10의 자리"
+from dual;
+
+-- 숫자를 절삭, 15.7, 15, 10 출력
+select trunc(15.79,1) 소수첫째,
+trunc(15.251,0) 정수,
+trunc(15.251,-1) "10의자리"
+from dual;
