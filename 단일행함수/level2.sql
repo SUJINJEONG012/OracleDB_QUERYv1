@@ -173,3 +173,38 @@ from employees;
 select lower(last_name) 소문자, upper(last_name) 대문자 , 
 INITCAP(email) 이메일은첫번째만대문자
 from employees;
+
+
+
+select 10*20 from dual;
+
+/* ===== 대소문자 조작 함수 ===== 
+LOWER 문자열을 소문자로 변환 
+UPPER 문자열을 대문자로 변환
+INITCAP 첫문자만 대문자로 변환하고, 나머지는 소문자로 변환
+*/
+
+/* ===== 문자 조작 함수 ===== 
+CONCAT 두 개의 문자열을 연결 
+concat('Hello','World') => HelloWorld
+
+SUBSTR 문자열내에서 지정된 위치의 문자열을 반환
+substr('HelloWorld', 2,5) => elloW
+
+LENGTH 문자열의 길이를 반환 
+length('HelloWorld') => 10
+
+INSTR 지정된 문자의 위치를 리턴한다 (문자열, 검색문자, [시작위치, [횟수]])
+instr('HelloWorld','o') => 5
+
+TRIM 접두어나 접미어를 잘라낸다
+trim('H' from 'HelloWorld') => elloWorld
+
+LPAD,RPAD 지정된문자열의 길이만큼 빈부분에 문자를 채운다
+
+*/
+
+
+select '홍 길동 ' 성명,
+substr('홍 길동', 1, instr('홍 길동', ' ', 1,1)-1)성
+from dual;
