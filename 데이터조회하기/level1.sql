@@ -93,3 +93,7 @@ from employees;
 
 -- distinct : 중복된 값 제거
 select distinct job_id  from employees;
+
+-- || 연결 연산자 
+select last_name || ' is a ' || job_id as "직업정보"
+from employees;
