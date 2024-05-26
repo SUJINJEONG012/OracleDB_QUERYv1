@@ -79,3 +79,6 @@ select * from employees where salary in (10000, 17000, 24000);
 select department_id from employees 
 where department_id not in(3,11)
 order by department_id desc;
+
+-- 입사일이 94년 2월 3일 전인 회원만 조회
+select hire_date from employees where hire_date < '94/02/03' order by hire_date desc;
