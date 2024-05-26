@@ -82,3 +82,11 @@ order by department_id desc;
 
 -- 입사일이 94년 2월 3일 전인 회원만 조회
 select hire_date from employees where hire_date < '94/02/03' order by hire_date desc;
+
+-- 임금을 100씩 올린 열 만들기
+select last_name, first_name, job_id, salary, salary+100 "월급+100"
+from employees;
+
+-- salary 값에 10% 뺀 열 만들기
+select last_name, first_name, job_id, salary, salary-salary/10 "월급10%"
+from employees;
