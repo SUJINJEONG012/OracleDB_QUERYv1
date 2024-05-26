@@ -52,3 +52,17 @@ select *  from employees where phone_number not like '%3%' and  phone_number lik
 
 -- employees 테이블에서 last_name에서 ms 을 포함하거나 ss 를 포함하는 직원정보 조회
 select * from employees where last_name like '%ms%' or last_name like '%st%';
+
+-- 월급이 9000 와 10000 사이에 있는 직원 조회
+select * from employees where salary >= 9000 and salary <= 10000;
+
+-- employees 테이블에서 salary가 10,000이상이고, 20,000이하인 직원정보를 출력
+select * from employees
+where salary between 10000 and 20000 ;
+
+-- employees 테이블에서 hire_date 가 1994년 1월 1일부터 1994년 12월 30일 사이인 직원정보 출력
+select * from employees
+where hire_date between '94/01/01' and  '94/12/30';
+
+-- employees 테이블에서 salary 7000 미만이거나 17000 보다 많은 사원을 출력
+select * from employees where salary < 7000 or salary > 17000;
