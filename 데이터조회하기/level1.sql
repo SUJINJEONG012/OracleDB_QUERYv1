@@ -97,3 +97,9 @@ select distinct job_id  from employees;
 -- || 연결 연산자 
 select last_name || ' is a ' || job_id as "직업정보"
 from employees;
+
+
+-- employees 테이블에서 employee_id 를 출력하고, 
+-- first_name, last_name 을 붙여서 출력하되 가운데 한 칸을 띄워서 출력, 
+-- 그리고 다음 열에는 email을 출력하되 @company.com 문구를 붙여서 출력
+select first_name || ' ' || last_name as 이름, email || '@company.com' as email from employees;
