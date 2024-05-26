@@ -70,3 +70,50 @@ select to_date('2011-01-01', 'YYYY-MM-DD') from dual;
 
 -- 문자를 숫자로 변환하는 간단한 예제
 select to_number('1021220') from dual;
+
+
+
+/* 날짜함수의 종류 
+ROUND - 형식에 맞추어 반올림
+TRUNC - 형식에 맞추어 버림한 날짜를 반환
+MONTHS_BETWEEN - 두 날짜간의 기간을 월 수로 계산한다.
+ADD_MONTHS - 날짜에 n 달을 더한 날짜를 계산
+NEXT_DAY - 날짜이후 지정된 요일에 해당하는 날짜를 계산
+LAST_DAY - 날짜를 포함한 달의 마지막 날짜를 계산한다.
+*/
+
+select 
+months_between('2017/10/10', '2017/06/10') 월차이,
+add_months('2018/07/10', 3) 월추가하기
+from dual;
+
+-- 현재날짜 
+select sysdate from dual;
+
+select sysdate-1 어제, sysdate 오늘, sysdate+1 내일 from dual;
+
+-- 근무일수 (현재날짜 - 입사날짜)
+select last_name, floor(sysdate - hire_date) 근무일수 from employees where department_id = 10;
+
+select employee_id, hire_date,
+-- round() 날짜를 반올림하고 1일로 반환
+round(hire_date, 'month') 월,
+round(hire_date, 'year') 년,
+-- trunc(날짜, 'month') : 모든 날짜데이터를 해당 월의 1일로 반환
+trunc(hire_date, 'month') month,
+-- trunc(날짜, 'month') : 모든 날짜데이터를 해당 연도의 1월1일로 반환
+trunc(hire_date, 'year') year
+from employees
+where months_between(sysdate, hire_date) > 12;
+
+-- employees테이블에서 department_id가 10인 직원에 대해 오늘날짜, hire_date, 오늘날짜와 hire_date사이의 개월 수를 출력 
+select  sysdate, hire_date, months_between(sysdate,hire_date) 오늘날차이 from employees
+where department_id = 10;
+
+select min(department_id), max(department_id) from employees;
+-- employees 테이블에서 employee_id가 3과 9의 사이인 직원의 hire_date에 3개월을 더한 값, hire_date에 3개월을 뺀 값 출력 
+select 
+add_months(hire_date, 3) "3개월추가하기",
+hire_date,
+add_months(hire_date, -3) "3개월 뺀값"
+from employees where department_id between 3 and 9;
