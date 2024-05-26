@@ -24,3 +24,16 @@ order by employee_id desc;
 select employee_id, salary 월급 from employees 
 where employee_id between 120 and 150
 order by department_id desc, salary desc ;
+
+-- like 연산자
+
+-- B로 시작하는 조건 
+select * from employees
+where last_name like 'B%';
+
+-- b가 있는 모든 쿼리 조회
+select * from employees
+where last_name like '%b%';
+-- 다섯번째로 적힌 d 조회
+select * from employees
+where first_name like '____d';
