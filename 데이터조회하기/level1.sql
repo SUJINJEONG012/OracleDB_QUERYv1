@@ -90,3 +90,6 @@ from employees;
 -- salary 값에 10% 뺀 열 만들기
 select last_name, first_name, job_id, salary, salary-salary/10 "월급10%"
 from employees;
+
+-- distinct : 중복된 값 제거
+select distinct job_id  from employees;
