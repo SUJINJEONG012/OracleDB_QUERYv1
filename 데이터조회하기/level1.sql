@@ -37,3 +37,18 @@ where last_name like '%b%';
 -- 다섯번째로 적힌 d 조회
 select * from employees
 where first_name like '____d';
+
+
+
+-- employees 테이블에서 email 값이 ad를 포함하는 모든데이터 조회
+select * from employees where email like '%ad%';
+
+-- employees 테이블에서 email 가 ad를 포함하면서 ad뒤에 따라오는 문자열이 3자리인 데이터 값을 갖는 직원정보를 조회
+select * from employees where email like '%ad___%' ;
+-- employees 테이블에서 전화번호 뒷자리가 1234로 끝나는 직원정보를 조회
+select * from employees where phone_number like '%1234';
+-- employees 테이블에서 전화번호 3이 들어가지 않으면서 전화번호 끝자리가 9로 끝나는 직원정보를 출력
+select *  from employees where phone_number not like '%3%' and  phone_number like '%9';
+
+-- employees 테이블에서 last_name에서 ms 을 포함하거나 ss 를 포함하는 직원정보 조회
+select * from employees where last_name like '%ms%' or last_name like '%st%';
