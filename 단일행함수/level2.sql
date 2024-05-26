@@ -139,3 +139,28 @@ where mod(employee_id, 2) =0 order by 1;
 
 --employees 테이블에서 salary를 30으로 나눈 후 나눈 값의 결과를 반올림하여  정수, 소수점 첫째 자리, 10의 자리로 나타내시오.
 select salary, round(salary /30, 0)정수, round(salary/30, 1) 소수첫째자리, round(salary/30, -1) "10의 자리" from employees;
+
+
+/* ==========  문자형 함수 예제 ========== */
+select department_id, last_name, department_id
+from employees where last_name = 'higgins';
+
+select department_id, last_name, department_id
+from employees where lower(last_name) = 'higgins';
+
+-- substr(3,1) 3번째위치에서 2문자를 추출
+select last_name, concat('이메일' , email) as 이메일
+from employees
+where substr(email, 3,2) = 'is';
+
+-- 젤 마지막에 있는 알파벳 1개 출력
+select last_name, substr(last_name, -1,1) from employees;
+
+-- 몇번째 알파벳이 있는지 확인
+select employee_id, 
+concat(first_name, last_name) 전체이름,
+last_name,
+length(last_name) 길이,
+instr(last_name, 'a') "'a'가 몇번째?"
+from employees;
+
