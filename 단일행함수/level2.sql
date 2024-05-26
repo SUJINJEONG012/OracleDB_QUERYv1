@@ -164,3 +164,12 @@ length(last_name) 길이,
 instr(last_name, 'a') "'a'가 몇번째?"
 from employees;
 
+
+-- replace() 특정문자 제거 함수 => 칼럼명, 찾을문자, 치환문자
+select email, replace(email, 'br', 'ssss') 적용결과
+from employees;
+
+-- INITCAP 첫번째 글자를 대문자로 변경하는 
+select lower(last_name) 소문자, upper(last_name) 대문자 , 
+INITCAP(email) 이메일은첫번째만대문자
+from employees;
