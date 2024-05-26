@@ -12,3 +12,12 @@ select *
 from employees e join jobs j on e.job_id = j.job_id;
 
 
+
+-- 직책(job_title)이 'Sales Manager' 인 사원들의 입사년도 그룹별 평균급여를 출력. 입사년도를 기준으로 오름차순 출력
+select TO_CHAR(e.hire_date, 'YYYY') 입사년도, 
+avg(e.salary) 평균급여  from employees e 
+join jobs j on e.job_id = j.job_id
+where j.job_title = 'Sales Manager'
+GROUP BY
+    TO_CHAR(e.hire_date, 'YYYY')
+order by 입사년도 asc;
