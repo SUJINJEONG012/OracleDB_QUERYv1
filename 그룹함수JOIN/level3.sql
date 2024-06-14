@@ -21,3 +21,10 @@ where j.job_title = 'Sales Manager'
 GROUP BY
     TO_CHAR(e.hire_date, 'YYYY')
 order by 입사년도 asc;
+
+-- departments 테이블에 있는 department_id 와 employees 테이블의 employee_id를 이용하여 
+-- 조인하여 부서아이디 나타내어라.
+
+select d.department_id
+from departments d 
+join employees e on d.department_id = e.employee_id;
