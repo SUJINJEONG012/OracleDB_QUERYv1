@@ -28,3 +28,11 @@ order by 입사년도 asc;
 select d.department_id
 from departments d 
 join employees e on d.department_id = e.employee_id;
+
+--  직책 jobs_title 이 'Sales Manager' 인 사원들의 입사년도 그룹 별 평균 급여를 출력
+select to_char(e.hire_date, 'YYYY') 입사년도, avg(e.salary) 평균급여
+from employees e
+join jobs j on  e.job_id = j.job_id
+where j.job_title ='Sales Manager' 
+group by to_char(e.hire_date, 'YYYY')
+order by 입사년도;
