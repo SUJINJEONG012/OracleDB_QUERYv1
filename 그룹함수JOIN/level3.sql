@@ -36,3 +36,9 @@ join jobs j on  e.job_id = j.job_id
 where j.job_title ='Sales Manager' 
 group by to_char(e.hire_date, 'YYYY')
 order by 입사년도;
+
+-- 부서별 사원수, 최대급여, 최소급여, 급여합계, 평균급여를 급여합계 큰순으로 조회
+select department_id 부서별, count(*)사원수, max(salary)최대급여, min(salary)최소급여, sum(salary)급여합계, round(avg(salary),2)평균급여 
+from employees
+group by department_id
+order by 급여합계 desc;
