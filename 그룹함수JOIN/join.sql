@@ -23,3 +23,9 @@ select *
 from employees e
 join departments d on e.department_id = d.department_id
 join locations l on d.department_id = l.department_id;
+
+-- 조건문 추가
+select e.employee_id, e.last_name, d.department_id, d.location_id
+from employees e
+join departments d on e.department_id = d.department_id
+where d.department_id = 10;
