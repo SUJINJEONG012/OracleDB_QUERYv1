@@ -12,3 +12,10 @@ from employees
 group by job_id
 having avg(salary) > 10000
 order by 월급여합계 desc;
+
+-- 부서번호 10을 제외한 부서별 평균급여가 7000이하인 부서들의 평균급여
+select department_id , round(avg(salary)) 평균급여
+from employees 
+where department_id != 10
+group by department_id
+having avg(salary) < 7000
