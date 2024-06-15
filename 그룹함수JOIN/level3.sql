@@ -46,3 +46,11 @@ order by 급여합계 desc;
 -- 부서별, 직업별(job_id)별로 그룹을 지어 salary 합계와 그룹별 직원의 숫자를 출력
 select department_id 부서별 , job_id 직종아이디, sum(salary) 급여합계,count(*) 직원수 from employees
 group by department_id, job_id;
+
+-- 부서별로 최고 월급을 뽑아서 평균을 내고, 최저월급 또한 평균을 내어 출력 
+select round(avg(max_salary),2), round(avg(min_salary),2) from (
+select department_id, max(salary) as max_salary, min(salary) as min_salary
+from employees 
+group by department_id
+);
+
